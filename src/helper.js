@@ -1,46 +1,60 @@
 export default class DistrictRepository {
   constructor(data) {
-    this.data = this.filter(data);
+    this.data = this.clean(data);
   }
   
-  filter(data) {
+  clean(data) {
     return data.reduce( (accu, dataObj) => {
-      const key = dataObj.Location.toUpperCase();
+      const district = dataObj.Location.toUpperCase();
       const year = dataObj.TimeFrame;
 
-      if (!accu[key]) {
-        accu[key] = {
-          location: key,
+      if (!accu[district]) {
+        accu[district] = {
+          location: district,
           data: {}
         };
       }
-
-      // closer to the solution here
-      // getting data into object, rounding is a little off
-      // need a check for "Data": "N/A" to pass last test
-
-      if (!accu[key].data[year]) {
-        accu[key].data[year] = Math.round(dataObj.Data * 1000) / 1000 || 0;
+      if (!accu[district].data[year]) {
+        accu[district].data[year] = Math.round(dataObj.Data * 1000) / 1000 || 0;
       } 
-        
       return accu;
     }, {});
   }
 
   findByName(string) {
-
     if (string) {
-      const keys =  Object.keys(this.data);
-      const foundString = keys.includes( string.toUpperCase() );
+      const districts = Object.keys(this.data);
+      const foundString = districts.includes( string.toUpperCase() );
 
       if (foundString) {
-        return keys.reduce( (accu, location) => {
-          if ( location === string.toUpperCase() ) {
-            accu = this.data[location];
+        return districts.reduce( (accu, district) => {
+          if ( district === string.toUpperCase() ) {
+            accu = this.data[district];
           }
           return accu;
         }, {} );
       }
+    }
+  }
+
+  findAllMatches(string) {
+    if (string) {
+      const districts = Object.keys(this.data);
+      const foundString = districts.includes( string.toUpperCase() );
+
+      if (foundString) {
+        return districts.reduce( (accu, district) => {
+          if ( district.match(string.toUpperCase()) ) {
+            accu.push(this.data[district]);
+          }
+          return accu;
+        }, [] );
+      } else {
+        return []
+      }
+
+    } else { 
+      return Object.keys(this.data).map( district => this.data[district])
     }
   }
 }
