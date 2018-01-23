@@ -20,7 +20,7 @@ export default class DistrictRepository {
       // need a check for "Data": "N/A" to pass last test
 
       if (!accu[key].data[year]) {
-        accu[key].data[year] = Math.ceil(dataObj.Data * 1000) / 1000;
+        accu[key].data[year] = Math.round(dataObj.Data * 1000) / 1000 || 0;
       } 
         
       return accu;
