@@ -4,16 +4,26 @@ export default class DistrictRepository {
   }
   
   filter(data) {
-    return data.reduce((acc, obj) => {
-      if (!acc[obj.Location]) {
-        let newKey = obj.Location.toUpperCase();
+    return data.reduce( (accu, dataObj) => {
+      const key = dataObj.Location.toUpperCase();
+      const year = dataObj.TimeFrame;
 
-        acc[newKey] = {
-          location: newKey,
+      if (!accu[key]) {
+        accu[key] = {
+          location: key,
           data: {}
         };
       }
-      return acc;
+
+      // closer to the solution here
+      // getting data into object, rounding is a little off
+      // need a check for "Data": "N/A" to pass last test
+
+      if (!accu[key].data[year]) {
+        accu[key].data[year] = Math.ceil(dataObj.Data * 1000) / 1000;
+      } 
+        
+      return accu;
     }, {});
   }
 
