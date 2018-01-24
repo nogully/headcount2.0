@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import './styles/App.css';
-import DistrictRepository from './helper';
-import kinderData from './data/kindergartners_in_full_day_program.js';
-import CardContainer from './components/CardContainer'
+import React, { Component } from "react";
+import "./styles/App.css";
+import DistrictRepository from "./helper";
+import kinderData from "./data/kindergartners_in_full_day_program.js";
+import CardContainer from "./components/CardContainer";
 
 const kinderGardenData = new DistrictRepository(kinderData);
-const mockData = kinderGardenData.findAllMatches();
-
+const mockData = kinderGardenData.findAllMatches('colorado');
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +19,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Headcount 2.0</h1>
-        <CardContainer data={this.state.data}/>
+        <CardContainer data={this.state.data} />
       </div>
     );
   }
