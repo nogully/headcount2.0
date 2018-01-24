@@ -16,5 +16,20 @@ describe("Card", () => {
     expect(wrapper).toBeDefined();
   });
 
+  it('should render 10 divs with data in them', () => {
+    expect(wrapper.find('.card-data-row').length).toEqual(11)
+  })
+
+  //does it return data.location
+  it('should render the district name as an h3', () => {
+    expect(wrapper.find('h3').first().text()).toEqual('COLORADO')
+  })
+  //is it assigning the percent class correctly
+  it('should assign the percent class based on whether the value is over 0.5', () => {
+    expect(wrapper.find('.belowFifty').length).toEqual(4)
+    expect(wrapper.find('.aboveFifty').length).toEqual(7);
+  })
+
+
   
 });
