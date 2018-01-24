@@ -5,7 +5,7 @@ import kinderData from './data/kindergartners_in_full_day_program.js';
 import CardContainer from './components/CardContainer'
 
 const kinderGardenData = new DistrictRepository(kinderData);
-const mockData = kinderGardenData.findAllMatches('colorado');
+const mockData = kinderGardenData.findAllMatches();
 
 
 class App extends Component {
@@ -18,8 +18,8 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <h1>headcount 2.0</h1>
+      <div className="App">
+        <h1>Headcount 2.0</h1>
         <CardContainer data={this.state.data}/>
       </div>
     );
