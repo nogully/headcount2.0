@@ -38,22 +38,16 @@ export default class DistrictRepository {
   }
 
   findAllMatches(string) {
-    if (string) {
-      const districts = Object.keys(this.data);
-      const foundString = districts.includes(string.toUpperCase());
-
-      if (foundString) {
-        return districts.reduce((accu, district) => {
-          if (district.match(string.toUpperCase())) {
-            accu.push(this.data[district]);
-          }
-          return accu;
-        }, []);
-      } else {
-        return [];
-      }
+    const districts = Object.keys(this.data);
+    if (!string) {
+      return districts.reduce((accu, district) => {
+        accu.push(this.data[district]);
+        return accu;
+      }, [])  
     } else {
-      return Object.keys(this.data).map(district => this.data[district]);
+      return districts.filter( district => {
+        return district.includes(string.toUpperCase())
+        }).map(district => this.data[district]);
+      }
     }
   }
-}
