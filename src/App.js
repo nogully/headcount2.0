@@ -6,20 +6,24 @@ import CardContainer from "./components/CardContainer";
 import Search from "./components/Search";
 
 const kinderGardenData = new DistrictRepository(kinderData);
-const allData = kinderGardenData.findAllMatches();
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: allData
+      data: []
     };
   }
 
+  componentDidMount = () => {
+    const allData = kinderGardenData.findAllMatches();
+    this.setState({ data: allData });
+  }
+
   searchDistrict = (string) => {
-    let foundDistrict = kinderGardenData.findByName(string);
-    //need to set state so that we can hand new state to card container and display the right cards
-    return foundDistrict;
+    let foundDistrict = kinderGardenData.findAllMatches(string);
+    console.log(foundDistrict)
+    this.setState({data: foundDistrict})
   }
 
   render() {
