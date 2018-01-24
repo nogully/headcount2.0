@@ -16,7 +16,7 @@ const Card = ({ data }) => {
     return (
       <div className="card-data-row" key={index}>
         <span className="years">{yearsArray[index]} : </span>
-        <span className={percentClass}>{percent}</span>{" "}
+        <span className={percentClass}>{percent}</span>
       </div>
     );
   });

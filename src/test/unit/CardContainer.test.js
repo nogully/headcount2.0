@@ -16,4 +16,8 @@ describe("CardContainer", () => {
   it("should exist", () => {
     expect(wrapper).toBeDefined();
   });
+
+  it('should make 2 cards if 2 cards are passed into it', () => {
+    expect(wrapper.find('Card').length).toEqual(2)
+  })
 });
