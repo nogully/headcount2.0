@@ -3,13 +3,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { shallow, mount, render } from "enzyme";
 import Card from "../../components/Card";
-import cardData from "../mockData";
+import { cardData } from "./mockData";
 
 describe("Card", () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = <Card data={cardData.district} key={cardData.index} />;
+  wrapper = shallow(<Card data={cardData.district} key={cardData.index} />);
   });
 
   it("should exist", () => {

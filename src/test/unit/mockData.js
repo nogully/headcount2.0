@@ -1,10 +1,10 @@
-import DistrictRepository from "../helper";
-import kinderData from "../data/kindergartners_in_full_day_program.js";
+import DistrictRepository from "../../helper";
+import kinderData from "../../data/kindergartners_in_full_day_program";
 
 const kinderGardenData = new DistrictRepository(kinderData);
 const mockData = kinderGardenData.findAllMatches("colorado");
 
-const containerData = [
+export const containerData = [
   {
     location: "COLORADO",
     data: {
@@ -39,7 +39,7 @@ const containerData = [
   }
 ];
 
-const cardData = {
+export const cardData = {
   district: {
     location: "COLORADO",
     data: {
@@ -59,4 +59,3 @@ const cardData = {
   index: 0
 };
 
-export default { containerData, cardData };
