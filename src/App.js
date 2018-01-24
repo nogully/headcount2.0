@@ -5,7 +5,7 @@ import kinderData from "./data/kindergartners_in_full_day_program.js";
 import CardContainer from "./components/CardContainer";
 
 const kinderGardenData = new DistrictRepository(kinderData);
-const mockData = kinderGardenData.findAllMatches('colorado');
+const mockData = kinderGardenData.findAllMatches();
 
 class App extends Component {
   constructor(props) {
