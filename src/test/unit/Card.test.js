@@ -15,4 +15,6 @@ describe("Card", () => {
   it("should exist", () => {
     expect(wrapper).toBeDefined();
   });
+
+  
 });

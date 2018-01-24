@@ -7,10 +7,16 @@ const Card = ({ data }) => {
   const percentArray = Object.values(data.data);
 
   const elements = percentArray.map((percent, index) => {
+    let percentClass = 'belowFifty'; 
+    
+    if (percent >= 0.500) {
+      percentClass = 'aboveFifty';
+    }
+
     return (
       <div className="card-data-row" key={index}>
         <span className="years">{yearsArray[index]} : </span>
-        <span className="percents">{percent}</span>{" "}
+        <span className={percentClass}>{percent}</span>{" "}
       </div>
     );
   });
