@@ -11,13 +11,28 @@ class Search extends Component {
     };
   }
 
+  handleInput = (e) => {
+    this.setState({
+      display: e.target.value
+    })
+  }
+
+  handleButtonClick = (e) => {
+    e.preventDefault();
+    console.log(this.props.searchDistrict(this.state.display))
+  }
+
   render() {
     return (
       <header>
         <form>
           <label htmlFor="search-input">Search for your school district</label>
-          <input id="search-input" type="text"/>
-          <button className='search-button'>Submit</button>    
+          <input id="search-input" 
+                 type="text" 
+                 value={ this.state.display }
+                 onChange={ this.handleInput }/>
+          <button className='search-button' 
+                  onClick={ this.handleButtonClick }>Submit</button>    
         </form>
       </header>
     )
