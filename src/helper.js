@@ -50,11 +50,11 @@ export default class DistrictRepository {
           return accu;
         }, [] );
       } else {
-        return []
+        return [];
       }
 
     } else { 
-      return Object.keys(this.data).map( district => this.data[district])
+      return Object.keys(this.data).map( district => this.data[district]);
     }
   }
 }
