@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import "../styles/Search.css";
-import DistrictRepository from "../helper";
-import kinderData from "../data/kindergartners_in_full_day_program.js";
 
 class Search extends Component {
   constructor(props) {

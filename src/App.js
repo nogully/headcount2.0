@@ -18,25 +18,42 @@ class App extends Component {
 
   componentDidMount = () => {
     const allData = kinderGardenData.findAllMatches();
-    this.setState({ data: allData })
-  }
+    this.setState({ data: allData });
+  };
 
-  searchDistrict = (string) => {
+  searchDistrict = string => {
     let foundDistrict = kinderGardenData.findAllMatches(string);
-    this.setState({data: foundDistrict});
-  }
+    this.setState({ data: foundDistrict });
+  };
 
-  clickCard = (string) => {
-    console.log(string);
-    // set card into this.state.selected
+  clickCard = string => {
+    const clickedDistrict = kinderGardenData.findByName(string);
+
+    if (
+      this.state.selected.length < 2 &&
+      !this.state.selected.includes(clickedDistrict)
+    ) {
+      const selected = [...this.state.selected, clickedDistrict];
+
+      this.setState({ selected });
+    } else if (!this.state.selected.includes(clickedDistrict)) {
+      const district = [...this.state.selected].pop();
+      const selected = [district, clickedDistrict];
+
+      this.setState({ selected });
+    }
   };
 
   render() {
     return (
       <div className="App">
         <h1>Headcount 2.0</h1>
-        <Search searchDistrict={this.searchDistrict}/>
-        <CardContainer data={this.state.data} clickCard={this.clickCard} selected={this.state.selected} />
+        <Search searchDistrict={this.searchDistrict} />
+        <CardContainer
+          data={this.state.data}
+          clickCard={this.clickCard}
+          selected={this.state.selected}
+        />
       </div>
     );
   }
