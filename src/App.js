@@ -11,27 +11,32 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
+      selected: []
     };
   }
 
   componentDidMount = () => {
     const allData = kinderGardenData.findAllMatches();
-    this.setState({ data: allData });
+    this.setState({ data: allData })
   }
 
   searchDistrict = (string) => {
     let foundDistrict = kinderGardenData.findAllMatches(string);
-    console.log(foundDistrict)
-    this.setState({data: foundDistrict})
+    this.setState({data: foundDistrict});
   }
+
+  clickCard = (string) => {
+    console.log(string);
+    // set card into this.state.selected
+  };
 
   render() {
     return (
       <div className="App">
         <h1>Headcount 2.0</h1>
         <Search searchDistrict={this.searchDistrict}/>
-        <CardContainer data={this.state.data} />
+        <CardContainer data={this.state.data} clickCard={this.clickCard} selected={this.state.selected} />
       </div>
     );
   }
