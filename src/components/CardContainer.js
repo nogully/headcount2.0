@@ -3,9 +3,13 @@ import Card from "./Card";
 import "../styles/CardContainer.css";
 import PropTypes from "prop-types";
 
-const CardContainer = ({ data }) => {
+const CardContainer = ({ data, clickCard, selected }) => {
   const renderedCards = data.map((district, index) => (
-    <Card data={district} key={index} />
+    <Card 
+      data={district} 
+      clickCard={clickCard} 
+      key={index} 
+      selected={selected} />
   ));
 
   return <div className="CardContainer">{renderedCards}</div>;

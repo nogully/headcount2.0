@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/Card.css";
 import PropTypes from "prop-types";
 
-const Card = ({ data }) => {
+const Card = ({ data, clickCard }) => {
   const yearsArray = Object.keys(data.data);
   const percentArray = Object.values(data.data);
 
@@ -21,8 +21,11 @@ const Card = ({ data }) => {
     );
   });
 
+  // if the selected location is in the array , .find() will return the value
+  // apply a class to the article if it's included
+
   return (
-    <article>
+    <article onClick={() => clickCard(data.location)}>
       <h3>{data.location}</h3>
       <div className="element-wrapper">{elements}</div>
     </article>
