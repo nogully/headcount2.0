@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const Comparison = ( { data, clickCard, selected }) => {
   if ( selected.length === 2) {
-    console.log('I have two cards to compare')
     
   }
   return ( 
