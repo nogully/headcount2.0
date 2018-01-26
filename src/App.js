@@ -4,7 +4,7 @@ import DistrictRepository from "./helper";
 import kinderData from "./data/kindergartners_in_full_day_program.js";
 import CardContainer from "./components/CardContainer";
 import Search from "./components/Search";
-import Comparison from './components/Comparison';
+import Comparison from "./components/Comparison";
 
 const kinderGardenData = new DistrictRepository(kinderData);
 
@@ -42,20 +42,26 @@ class App extends Component {
       const selected = [district, clickedDistrict];
 
       this.setState({ selected });
-    }
-      console.log(this.state.selected)
+    } else {
+      const remaining = this.state.selected.filter(
+        district => clickedDistrict.location !== district.location
+      );
+      const selected = [...remaining];
 
+      this.setState({ selected });
+    }
   };
 
   render() {
-    return ( 
+    return (
       <div className="App">
         <h1>Headcount 2.0</h1>
         <Search searchDistrict={this.searchDistrict} />
-        <Comparison 
+        <Comparison
           data={this.state.data}
           clickCard={this.clickCard}
-          selected={this.state.selected}/>
+          selected={this.state.selected}
+        />
         <CardContainer
           data={this.state.data}
           clickCard={this.clickCard}
