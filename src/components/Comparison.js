@@ -1,25 +1,21 @@
-import React from "react";
-import Card from "./Card";
-import "../styles/CardContainer.css";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const CardContainer = ({ data, clickCard, selected }) => {
-  const renderedCards = data.map((district, index) => {
-    return <Card 
-      data={district} 
-      clickCard={clickCard} 
-      key={index} 
-      selected={selected}  />
-  });
+const Comparison = ( { data, clickCard, selected }) => {
+  if ( selected.length === 2) {
+    console.log('I have two cards to compare')
+    
+  }
+  return ( 
+    <div className="Comparison"> 
+      Comparison component
+   </div>
+ )
+}
 
-  return (
-    <div className="CardContainer">
-      { renderedCards }
-    </div>
-  )
-};
+export default Comparison;
 
-CardContainer.propTypes = {
+Comparison.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       location: PropTypes.string.isRequired,
@@ -37,7 +33,7 @@ CardContainer.propTypes = {
         2014: PropTypes.number.isRequired
       }).isRequired
     })
-  ).isRequired
+  ).isRequired, 
+  clickCard: PropTypes.func.isRequired, 
+  selected: PropTypes.array.isRequired
 };
-
-export default CardContainer;

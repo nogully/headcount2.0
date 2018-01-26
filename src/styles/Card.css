@@ -9,6 +9,10 @@ article {
   width: 12rem;
 }
 
+.highlighted {
+  background-color: aqua;
+}
+
 h3 {
   align-self: center;
   background-color: #5B5BE8;
