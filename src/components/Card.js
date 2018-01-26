@@ -5,13 +5,17 @@ import PropTypes from "prop-types";
 const Card = ({ data, clickCard, selected }) => {
   const yearsArray = Object.keys(data.data);
   const percentArray = Object.values(data.data);
-  const highlighted = selected.find( district => district.location === data.location) ? 'highlighted' : ''
-  //there is a way to add highlighted class but not to take it off
+  const highlighted = selected.find(
+    district => district.location === data.location
+  )
+    ? "highlighted"
+    : "";
+
   const elements = percentArray.map((percent, index) => {
-    let percentClass = 'belowFifty'; 
-    
-    if (percent >= 0.500) {
-      percentClass = 'aboveFifty';
+    let percentClass = "belowFifty";
+
+    if (percent >= 0.5) {
+      percentClass = "aboveFifty";
     }
 
     return (
@@ -22,11 +26,8 @@ const Card = ({ data, clickCard, selected }) => {
     );
   });
 
-  // if the selected location is in the array , .find() will return the value
-  // apply a class to the article if it's included
-
   return (
-    <article onClick={() => clickCard(data.location)} className={highlighted} >
+    <article onClick={() => clickCard(data.location)} className={highlighted}>
       <h3>{data.location}</h3>
       <div className="element-wrapper">{elements}</div>
     </article>
@@ -52,6 +53,6 @@ Card.prototype = {
       }).isRequired
     })
   ).isRequired
-}
+};
 
 export default Card;

@@ -1,23 +1,38 @@
-import React from 'react';
-import Card from './Card'
+import React from "react";
+import Card from "./Card";
 import "../styles/Comparison.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-const Comparison = ( { data, clickCard, selected }) => {
+const Comparison = ({ data, clickCard, selected, getComparison }) => {
+  const averageObj = getComparison(selected[0].location, selected[1].location);
+
   const renderedCards = selected.map((district, index) => {
-    return <Card 
-      data={district} 
-      clickCard={clickCard} 
-      key={index} 
-      selected={selected}  />
-  })
+    return (
+      <Card
+        data={district}
+        clickCard={clickCard}
+        key={index}
+        selected={selected}
+      />
+    );
+  });
 
-  return ( 
-    <div className="Comparison"> 
-      { renderedCards }
-   </div>
- )
-}
+  return (
+    <div className="Comparison">
+      {renderedCards[0]}
+
+      <article className="average-card">
+        <h3>{Object.keys(averageObj)[0]}</h3>
+        <h3>{Object.values(averageObj)[0]}</h3>
+        <h3>Average</h3>
+        <h3>{Object.values(averageObj)[2]}</h3>
+        <h3>{Object.keys(averageObj)[1]}</h3>
+        <h3>{Object.values(averageObj)[1]}</h3>
+      </article>
+      {renderedCards[1]}
+    </div>
+  );
+};
 
 export default Comparison;
 
@@ -39,7 +54,7 @@ Comparison.propTypes = {
         2014: PropTypes.number.isRequired
       }).isRequired
     })
-  ).isRequired, 
-  clickCard: PropTypes.func.isRequired, 
+  ).isRequired,
+  clickCard: PropTypes.func.isRequired,
   selected: PropTypes.array.isRequired
 };
