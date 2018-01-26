@@ -57,11 +57,12 @@ class App extends Component {
       <div className="App">
         <h1>Headcount 2.0</h1>
         <Search searchDistrict={this.searchDistrict} />
-        <Comparison
+        
+        {(this.state.selected.length === 2) && <Comparison
           data={this.state.data}
           clickCard={this.clickCard}
           selected={this.state.selected}
-        />
+        />}
         <CardContainer
           data={this.state.data}
           clickCard={this.clickCard}

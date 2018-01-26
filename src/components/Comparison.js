@@ -1,13 +1,20 @@
 import React from 'react';
+import Card from './Card'
+import "../styles/Comparison.css";
 import PropTypes from 'prop-types';
 
 const Comparison = ( { data, clickCard, selected }) => {
-  if ( selected.length === 2) {
-    
-  }
+  const renderedCards = selected.map((district, index) => {
+    return <Card 
+      data={district} 
+      clickCard={clickCard} 
+      key={index} 
+      selected={selected}  />
+  })
+
   return ( 
     <div className="Comparison"> 
-      Comparison component
+      { renderedCards }
    </div>
  )
 }
