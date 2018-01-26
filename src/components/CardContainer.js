@@ -4,15 +4,19 @@ import "../styles/CardContainer.css";
 import PropTypes from "prop-types";
 
 const CardContainer = ({ data, clickCard, selected }) => {
-  const renderedCards = data.map((district, index) => (
-    <Card 
+  const renderedCards = data.map((district, index) => {
+    return <Card 
       data={district} 
       clickCard={clickCard} 
       key={index} 
-      selected={selected} />
-  ));
+      selected={selected}  />
+  });
 
-  return <div className="CardContainer">{renderedCards}</div>;
+  return (
+    <div className="CardContainer">
+      { renderedCards }
+    </div>
+  )
 };
 
 CardContainer.propTypes = {

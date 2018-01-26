@@ -2,10 +2,11 @@ import React from "react";
 import "../styles/Card.css";
 import PropTypes from "prop-types";
 
-const Card = ({ data, clickCard }) => {
+const Card = ({ data, clickCard, selected }) => {
   const yearsArray = Object.keys(data.data);
   const percentArray = Object.values(data.data);
-
+  const highlighted = selected.find( district => district.location) ? 'highlighted' : ''
+  //there is a way to add highlighted class but not to take it off
   const elements = percentArray.map((percent, index) => {
     let percentClass = 'belowFifty'; 
     
@@ -25,7 +26,7 @@ const Card = ({ data, clickCard }) => {
   // apply a class to the article if it's included
 
   return (
-    <article onClick={() => clickCard(data.location)}>
+    <article onClick={() => clickCard(data.location)} className={highlighted} >
       <h3>{data.location}</h3>
       <div className="element-wrapper">{elements}</div>
     </article>
