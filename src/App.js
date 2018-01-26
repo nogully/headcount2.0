@@ -52,17 +52,24 @@ class App extends Component {
     }
   };
 
+  getComparison = (dist1, dist2) => {
+    return kinderGardenData.compareDistrictAverages(dist1, dist2);
+  };
+
   render() {
     return (
       <div className="App">
         <h1>Headcount 2.0</h1>
         <Search searchDistrict={this.searchDistrict} />
-        
-        {(this.state.selected.length === 2) && <Comparison
-          data={this.state.data}
-          clickCard={this.clickCard}
-          selected={this.state.selected}
-        />}
+
+        {this.state.selected.length === 2 && (
+          <Comparison
+            data={this.state.data}
+            clickCard={this.clickCard}
+            selected={this.state.selected}
+            getComparison={this.getComparison}
+          />
+        )}
         <CardContainer
           data={this.state.data}
           clickCard={this.clickCard}
