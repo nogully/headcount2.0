@@ -25,7 +25,6 @@ class App extends Component {
   searchDistrict = string => {
     let foundDistrict = kinderGardenData.findAllMatches(string);
     this.setState({ data: foundDistrict });
-    console.log(foundDistrict)
   };
 
   clickCard = string => {
