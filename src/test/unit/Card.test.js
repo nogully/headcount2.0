@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React from "react";
-import ReactDOM from "react-dom";
 import { shallow, mount, render } from "enzyme";
 import Card from "../../components/Card";
 import { cardData, selected } from "./mockData";
@@ -9,7 +8,7 @@ describe("Card", () => {
   let wrapper;
 
   beforeEach(() => {
-  wrapper = shallow(<Card data={cardData.district} key={cardData.index} selected={selected}/>);
+    wrapper = shallow(<Card data={cardData.district} key={cardData.index} selected={selected}/>);
   });
 
   it("should exist", () => {
@@ -29,7 +28,6 @@ describe("Card", () => {
     expect(wrapper.find('.belowFifty').length).toEqual(4)
     expect(wrapper.find('.aboveFifty').length).toEqual(7);
   })
-
 
   
 });

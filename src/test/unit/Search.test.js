@@ -36,6 +36,9 @@ describe('Search', () => {
     expect(wrapper.find('input').text()).toEqual('colorado');
   })
 
+
+  //instance()
+
   it.skip('upon typing, user should see what they are typing via state.display ', () => {
     expect(wrapper.find('input').text()).toEqual('')
 
