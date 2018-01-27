@@ -32,7 +32,7 @@ class Search extends Component {
                  value={ this.state.display }
                  onChange={ this.handleInput }/>
           <button className='search-button' 
-                  onClick={ this.handleButtonClick }>Submit</button>    
+                  onClick={ this.handleButtonClick }>Submit</button> 
         </form>
       </header>
     )

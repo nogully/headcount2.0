@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 
 const Comparison = ({ data, clickCard, selected, getComparison }) => {
   const averageObj = getComparison(selected[0].location, selected[1].location);
-  console.log(averageObj);
   const renderedCards = selected.map((district, index) => {
     return (
       <Card
@@ -20,12 +19,11 @@ const Comparison = ({ data, clickCard, selected, getComparison }) => {
   return (
     <div className="Comparison">
       {renderedCards[0]}
-
       <article className="average-card">
         <h3>{Object.keys(averageObj)[0]}</h3>
         <h3>{Object.values(averageObj)[0]}</h3>
         <h3>Average</h3>
-        <h3>{Object.values(averageObj)[2]}</h3>
+        <h3 className="compared">{Object.values(averageObj)[2]}</h3>
         <h3>{Object.keys(averageObj)[1]}</h3>
         <h3>{Object.values(averageObj)[1]}</h3>
       </article>
