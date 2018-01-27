@@ -34,6 +34,8 @@ const Card = ({ data, clickCard, selected }) => {
   );
 };
 
+// need prop types for clickCard, selected
+
 Card.prototype = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
@@ -52,7 +54,7 @@ Card.prototype = {
         2014: PropTypes.number.isRequired
       }).isRequired
     })
-  ).isRequired
+  ).isRequired,
 };
 
 export default Card;

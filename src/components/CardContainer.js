@@ -19,6 +19,8 @@ const CardContainer = ({ data, clickCard, selected }) => {
   )
 };
 
+// need prop types for clickCard, selecte
+
 CardContainer.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({

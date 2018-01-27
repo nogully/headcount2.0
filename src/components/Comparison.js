@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const Comparison = ({ data, clickCard, selected, getComparison }) => {
   const averageObj = getComparison(selected[0].location, selected[1].location);
-
+  console.log(averageObj);
   const renderedCards = selected.map((district, index) => {
     return (
       <Card
@@ -36,6 +36,8 @@ const Comparison = ({ data, clickCard, selected, getComparison }) => {
 
 export default Comparison;
 
+// need prop types for clickCard, selected, getComparison
+
 Comparison.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
@@ -55,6 +57,6 @@ Comparison.propTypes = {
       }).isRequired
     })
   ).isRequired,
-  clickCard: PropTypes.func.isRequired,
+  //clickCard: PropTypes.func.isRequired,
   selected: PropTypes.array.isRequired
 };
