@@ -9,7 +9,8 @@ exports[`Search should have a label, input field, and a button in a form element
       <label
         htmlFor="search-input"
       >
-        Search for your school district: 
+        Search for your school district:
+         
       </label>
       <input
         id="search-input"

@@ -5,6 +5,7 @@ exports[`Comparison should render an average card in the middle of two Card comp
   className="Comparison"
 >
   <Card
+    clickCard={[Function]}
     data={
       Object {
         "data": Object {
@@ -23,7 +24,7 @@ exports[`Comparison should render an average card in the middle of two Card comp
         "location": "COLORADO",
       }
     }
-    key="0"
+    key="COLORADO"
     selected={
       Array [
         Object {
@@ -86,6 +87,7 @@ exports[`Comparison should render an average card in the middle of two Card comp
     </h3>
   </article>
   <Card
+    clickCard={[Function]}
     data={
       Object {
         "data": Object {
@@ -104,7 +106,7 @@ exports[`Comparison should render an average card in the middle of two Card comp
         "location": "COLORADO SPRINGS 11",
       }
     }
-    key="1"
+    key="COLORADO SPRINGS 11"
     selected={
       Array [
         Object {
