@@ -1,21 +1,20 @@
-import React from "react";
-import "../styles/Card.css";
-import PropTypes from "prop-types";
+import React from 'react';
+import '../styles/Card.css';
+import PropTypes from 'prop-types';
 
 const Card = ({ data, clickCard, selected }) => {
   const yearsArray = Object.keys(data.data);
   const percentArray = Object.values(data.data);
+
   const highlighted = selected.find(
     district => district.location === data.location
-  )
-    ? "highlighted"
-    : "";
+  ) ? 'highlighted': '';
 
   const elements = percentArray.map((percent, index) => {
-    let percentClass = "belowFifty";
+    let percentClass = 'belowFifty';
 
     if (percent >= 0.5) {
-      percentClass = "aboveFifty";
+      percentClass = 'aboveFifty';
     }
 
     return (
@@ -33,8 +32,6 @@ const Card = ({ data, clickCard, selected }) => {
     </article>
   );
 };
-
-// need prop types for clickCard, selected
 
 Card.prototype = {
   data: PropTypes.arrayOf(
@@ -55,6 +52,27 @@ Card.prototype = {
       }).isRequired
     })
   ).isRequired,
+
+  clickCard: PropTypes.func.isRequired,
+
+  selected: PropTypes.arrayOf(
+    PropTypes.shape({
+      location: PropTypes.string.isRequired,
+      data: PropTypes.shape({
+        2004: PropTypes.number.isRequired,
+        2005: PropTypes.number.isRequired,
+        2006: PropTypes.number.isRequired,
+        2007: PropTypes.number.isRequired,
+        2008: PropTypes.number.isRequired,
+        2009: PropTypes.number.isRequired,
+        2010: PropTypes.number.isRequired,
+        2011: PropTypes.number.isRequired,
+        2012: PropTypes.number.isRequired,
+        2013: PropTypes.number.isRequired,
+        2014: PropTypes.number.isRequired
+      }).isRequired
+    })
+  ).isRequired
 };
 
 export default Card;

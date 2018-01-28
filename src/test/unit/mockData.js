@@ -94,3 +94,31 @@ export const selected = [
   }
 ]
 
+export const clickCard = string => {
+  const clickedDistrict = kinderGardenData.findByName(string);
+
+  if (
+    this.state.selected.length < 2 &&
+    !this.state.selected.includes(clickedDistrict)
+  ) {
+    const selected = [...this.state.selected, clickedDistrict];
+
+    this.setState({ selected });
+  } else if (!this.state.selected.includes(clickedDistrict)) {
+    const district = [...this.state.selected].pop();
+    const selected = [district, clickedDistrict];
+
+    this.setState({ selected });
+  } else {
+    const remaining = this.state.selected.filter(
+      district => clickedDistrict.location !== district.location
+    );
+    const selected = [...remaining];
+
+    this.setState({ selected });
+  }
+};
+
+export const getComparison = () => {
+  return {'COLORADO': 0.53, 'ACADEMY 20': 0.407, 'compared': 1.302}
+}

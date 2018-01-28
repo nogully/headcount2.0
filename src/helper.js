@@ -39,6 +39,7 @@ export default class DistrictRepository {
 
   findAllMatches(string) {
     const districts = Object.keys(this.data);
+    
     if (!string) {
       return districts.reduce((accu, district) => {
         accu.push(this.data[district]);

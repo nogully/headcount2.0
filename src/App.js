@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import "./styles/App.css";
-import DistrictRepository from "./helper";
-import kinderData from "./data/kindergartners_in_full_day_program.js";
-import CardContainer from "./components/CardContainer";
-import Search from "./components/Search";
-import Comparison from "./components/Comparison";
+import React, { Component } from 'react';
+import './styles/App.css';
+import DistrictRepository from './helper';
+import kinderData from './data/kindergartners_in_full_day_program.js';
+import CardContainer from './components/CardContainer';
+import Search from './components/Search';
+import Comparison from './components/Comparison';
 
 const kinderGardenData = new DistrictRepository(kinderData);
 
