@@ -34,8 +34,6 @@ const Comparison = ({ data, clickCard, selected, getComparison }) => {
 
 export default Comparison;
 
-// need prop types for clickCard, selected, getComparison
-
 Comparison.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
@@ -55,6 +53,7 @@ Comparison.propTypes = {
       }).isRequired
     })
   ).isRequired,
-  //clickCard: PropTypes.func.isRequired,
-  selected: PropTypes.array.isRequired
+  clickCard: PropTypes.func,
+  selected: PropTypes.array.isRequired, 
+  getComparison: PropTypes.func.isRequired
 };

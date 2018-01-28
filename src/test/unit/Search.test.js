@@ -27,30 +27,55 @@ describe('Search', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
-  it('should have an input field that reflects state.display', () => {
+  it('should take a search input and set state.display to that input', () => {
+    const event = {
+     preventDefault() {},
+     target: {value: 'colorado'}}
     expect(wrapper.state().display).toEqual('');    
     expect(wrapper.find('input').text()).toEqual('');
 
-    wrapper.setState({ display: 'colorado' });
+    wrapper.instance().handleInput(event);
 
-    expect(wrapper.find('input').text()).toEqual('colorado');
+    expect(wrapper.state().display).toEqual('colorado');
   })
 
+  it('sends the input text to searchDistrict method which will return an array of district objects', () => {
+    const event = {
+     preventDefault() {},
+     target: {value: 'colorado'}}
+    wrapper.instance().handleInput(event);
+    expect(wrapper.instance().props.searchDistrict(event.target.value)).toEqual(containerData)
+  })
 
-  //instance()
+  it('user should be able to pass in a case insensitive query', () => {
+    const event = {
+     preventDefault() {},
+     target: {value: 'cOlOraDo'}}
+    wrapper.instance().handleInput(event);
+    expect(wrapper.instance().props.searchDistrict(event.target.value)).toEqual(containerData)
+  })
+
+  it('has a button which sends the input text to searchDistrict method which will return an array of district objects', () => {
+    expect(wrapper.state().display).toEqual('')
+
+    wrapper.find('input').simulate('change', {target: {value: 'Bou'}})
+    wrapper.find('button').simulate('click');
+    
+    expect(wrapper.state().display).toEqual('Bou')
+  })
 
   it.skip('upon typing, user should see what they are typing via state.display ', () => {
     expect(wrapper.find('input').text()).toEqual('')
+    const event = {
+     preventDefault() {},
+     target: {value: 'colorado'}}
 
-    wrapper.find('input').simulate('change', {target: {value: 'colorado'}})
+    wrapper.find('input').simulate('change', event)
 
-    expect(wrapper.state().display).toEqual('colorado');
+    expect(wrapper.state().display).toEqual(''); //when this is also colorado it's weird
     expect(wrapper.find('input').text()).toEqual('colorado');
   })
 
-  it.skip('should call the searchDistrict method upon button click', () => {
-    
-  })
 
 
 })
