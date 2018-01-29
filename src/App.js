@@ -29,8 +29,9 @@ class App extends Component {
 
   handleButtonClick = event => {
     event.preventDefault();
+    const allData = kinderGardenData.findAllMatches();
     this.setState({ selected: [] });
-    this.searchDistrict('');
+    this.setState({ data: allData });
   };
 
   clickCard = string => {
@@ -65,7 +66,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>HEADCOUNT 2.0</h1>
+        <h1>KinderCompare</h1>
         <Search
           searchDistrict={this.searchDistrict}
           handleButtonClick={this.handleButtonClick}

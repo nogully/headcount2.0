@@ -9,7 +9,7 @@ const Search = props => {
         kindergarten participation rates
       </h5>
       <form>
-        <label htmlFor="search-input">Search for your school district: </label>
+        <label htmlFor="search-input">Search districts: </label>
         <input
           id="search-input"
           type="text"
@@ -22,7 +22,7 @@ const Search = props => {
           className="clear-button"
           onClick={event => props.handleButtonClick}
         >
-          Clear All
+          Start Over
         </button>
       </form>
     </header>
