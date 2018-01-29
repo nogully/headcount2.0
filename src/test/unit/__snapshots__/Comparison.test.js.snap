@@ -65,26 +65,33 @@ exports[`Comparison should render an average card in the middle of two Card comp
   <article
     className="average-card"
   >
+    <h5>
+      Selected district 10-year averages:
+    </h5>
     <h3>
       COLORADO
     </h3>
-    <h3>
-      0.53
-    </h3>
-    <h3>
-      Average
-    </h3>
+    <h5>
+      53.0
+      %
+    </h5>
     <h3
+      className="average"
+    >
+      RATIO
+    </h3>
+    <h5
       className="compared"
     >
       1.302
-    </h3>
+    </h5>
     <h3>
       ACADEMY 20
     </h3>
-    <h3>
-      0.407
-    </h3>
+    <h5>
+      40.7
+      %
+    </h5>
   </article>
   <Card
     clickCard={[Function]}

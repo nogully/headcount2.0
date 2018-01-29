@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Search.css';
+import PropTypes from 'prop-types';
 
 const Search = props => {
   return (
@@ -27,6 +28,11 @@ const Search = props => {
       </form>
     </header>
   );
+};
+
+Search.propTypes = {
+  searchDistrict: PropTypes.func.isRequired,
+  handleButtonClick: PropTypes.func.isRequired
 };
 
 export default Search;
