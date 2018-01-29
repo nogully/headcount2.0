@@ -9,7 +9,7 @@ exports[`Search should have a label, input field, and a button in a form element
     <label
       htmlFor="search-input"
     >
-      Search for your school district: 
+      Search districts: 
     </label>
     <input
       id="search-input"
@@ -21,7 +21,7 @@ exports[`Search should have a label, input field, and a button in a form element
       className="clear-button"
       onClick={[Function]}
     >
-      Clear All
+      Start Over
     </button>
   </form>
 </header>

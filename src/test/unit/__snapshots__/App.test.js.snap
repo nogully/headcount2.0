@@ -5,7 +5,7 @@ exports[`App exists and matches snapshot 1`] = `
   className="App"
 >
   <h1>
-    HEADCOUNT 2.0
+    KinderCompare
   </h1>
   <Search
     handleButtonClick={[Function]}
