@@ -119,6 +119,11 @@ export const clickCard = string => {
   }
 };
 
+export const searchDistrict = string => {
+  let foundDistrict = kinderGardenData.findAllMatches(string);
+  this.setState({ data: foundDistrict });
+};
+
 export const getComparison = () => {
   return {'COLORADO': 0.53, 'ACADEMY 20': 0.407, 'compared': 1.302}
 }
