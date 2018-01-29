@@ -1,6 +1,15 @@
 .App {
+  background-color: #0B0B1D;
   box-sizing: border-box;
   color: #5B5BE8;
-  margin: auto;
+  margin: 0px;
   text-align: center;
+}
+
+h1 {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  margin: 0px 0px 10px 0px;
+  padding-top: 20px;
 }

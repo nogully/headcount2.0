@@ -18,14 +18,16 @@ const Comparison = ({ data, clickCard, selected, getComparison }) => {
 
   return (
     <div className="Comparison">
+
       {renderedCards[0]}
       <article className="average-card">
+      <h5> Your compared district averages:</h5>
         <h3>{Object.keys(averageObj)[0]}</h3>
-        <h3>{Object.values(averageObj)[0]}</h3>
-        <h3>Average</h3>
-        <h3 className="compared">{Object.values(averageObj)[2]}</h3>
+        <h5>{Object.values(averageObj)[0]}</h5>
+        <h3 className="average">AVERAGE OF BOTH</h3>
+        <h5 className="compared">{Object.values(averageObj)[2]}</h5>
         <h3>{Object.keys(averageObj)[1]}</h3>
-        <h3>{Object.values(averageObj)[1]}</h3>
+        <h5>{Object.values(averageObj)[1]}</h5>
       </article>
       {renderedCards[1]}
     </div>

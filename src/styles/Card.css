@@ -1,6 +1,6 @@
 article {
   background-color: white;
-  box-shadow: 1px 1px 5px lightgray;
+  box-shadow: 1px 1px 5px #BBB;
   display: flex;
   flex-direction: column;
   height: 20rem;
@@ -10,13 +10,13 @@ article {
 }
 
 .highlighted {
-  background-color: aqua;
+  background-color: #C1EDF6;
 }
 
 h3 {
   align-self: center;
   background-color: #5B5BE8;
-  color: ghostwhite;
+  color: white;
   font-family: 'Oswald', sans-serif;
   font-size: 1rem;
   padding: 0px 5px;
@@ -27,15 +27,16 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-left: 2rem;
+  padding-left: 3rem;
 }
 
 .years {
-  color: #1010A4;
+  color: #0B0B1D;
+  font-weight: 700;
 }
 
 .belowFifty {
-  color: red;
+  color: #E85B5B;
 }
 
 .aboveFifty {

@@ -59,7 +59,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Headcount 2.0</h1>
+       <h1>HEADCOUNT 2.0</h1>
         <Search searchDistrict={this.searchDistrict} />
 
         {this.state.selected.length === 2 && (
