@@ -1,32 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search should have a label, input field, and a button in a form element 1`] = `
-<Search
-  searchDistrict={[Function]}
->
-  <header>
-    <h5>
-      Click two Colorado school districts to compare their full-day kindergarten participation rates
-    </h5>
-    <form>
-      <label
-        htmlFor="search-input"
-      >
-        Search for your school district: 
-      </label>
-      <input
-        id="search-input"
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        type="text"
-      />
-      <button
-        className="clear-button"
-        onClick={[Function]}
-      >
-        Clear All
-      </button>
-    </form>
-  </header>
-</Search>
+<header>
+  <h5>
+    Click two Colorado school districts to compare their full-day kindergarten participation rates
+  </h5>
+  <form>
+    <label
+      htmlFor="search-input"
+    >
+      Search for your school district: 
+    </label>
+    <input
+      id="search-input"
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      type="text"
+    />
+    <button
+      className="clear-button"
+      onClick={[Function]}
+    >
+      Clear All
+    </button>
+  </form>
+</header>
 `;
