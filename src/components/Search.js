@@ -31,7 +31,7 @@ class Search extends Component {
         </h5>
         <form>
           <label htmlFor="search-input">
-            Search for your school district:{' '}
+            Search districts:{' '}
           </label>
           <input
             id="search-input"
@@ -40,7 +40,7 @@ class Search extends Component {
             onChange={this.handleInput}
           />
           <button className="clear-button" onClick={this.handleButtonClick}>
-            Clear
+            Clear Search
           </button>
         </form>
       </header>
