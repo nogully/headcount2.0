@@ -26,6 +26,9 @@ class Search extends Component {
   render() {
     return (
       <header>
+        <h5>
+          Click two Colorado school districts to compare their full-day kindergarten participation rates
+        </h5>
         <form>
           <label htmlFor="search-input">
             Search for your school district:{' '}

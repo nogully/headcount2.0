@@ -1,6 +1,11 @@
 .Comparison {
+  background-color: #E85B5B;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.average {
+  background-color: #E85B5B;
 }
