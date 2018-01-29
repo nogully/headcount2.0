@@ -20,7 +20,7 @@ const Card = ({ data, clickCard, selected }) => {
     return (
       <div className="card-data-row" key={index}>
         <span className="years">{yearsArray[index]} : </span>
-        <span className={percentClass}>{percent}</span>
+        <span className={percentClass}>{'  '}{(percent * 100).toFixed(1)}%</span>
       </div>
     );
   });
