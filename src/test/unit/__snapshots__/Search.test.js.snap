@@ -19,10 +19,10 @@ exports[`Search should have a label, input field, and a button in a form element
         value=""
       />
       <button
-        className="search-button"
+        className="clear-button"
         onClick={[Function]}
       >
-        Submit
+        Clear
       </button>
     </form>
   </header>

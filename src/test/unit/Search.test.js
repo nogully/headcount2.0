@@ -62,13 +62,14 @@ describe('Search', () => {
     );
   });
 
-  it('has a button which sends the input text to searchDistrict method which will return an array of district objects', () => {
+  it('has a button which clears the input text and then causes all districts to display once more', () => {
     expect(wrapper.state().display).toEqual('');
 
     wrapper.find('input').simulate('change', { target: { value: 'Bou' } });
+    expect(wrapper.state().display).toEqual('Bou')
     wrapper.find('button').simulate('click');
 
-    expect(wrapper.state().display).toEqual('Bou');
+    expect(wrapper.state().display).toEqual('');
   });
 
 });
