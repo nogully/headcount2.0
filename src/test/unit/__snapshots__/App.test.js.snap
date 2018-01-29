@@ -5,9 +5,10 @@ exports[`App exists and matches snapshot 1`] = `
   className="App"
 >
   <h1>
-    Headcount 2.0
+    HEADCOUNT 2.0
   </h1>
   <Search
+    handleButtonClick={[Function]}
     searchDistrict={[Function]}
   />
   <CardContainer

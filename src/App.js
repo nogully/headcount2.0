@@ -27,6 +27,12 @@ class App extends Component {
     this.setState({ data: foundDistrict });
   };
 
+  handleButtonClick = event => {
+    event.preventDefault();
+    this.setState({ selected: [] });
+    this.searchDistrict('');
+  };
+
   clickCard = string => {
     const clickedDistrict = kinderGardenData.findByName(string);
 
@@ -59,8 +65,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <h1>HEADCOUNT 2.0</h1>
-        <Search searchDistrict={this.searchDistrict} />
+        <h1>HEADCOUNT 2.0</h1>
+        <Search
+          searchDistrict={this.searchDistrict}
+          handleButtonClick={this.handleButtonClick}
+        />
 
         {this.state.selected.length === 2 && (
           <Comparison
@@ -70,6 +79,7 @@ class App extends Component {
             getComparison={this.getComparison}
           />
         )}
+
         <CardContainer
           data={this.state.data}
           clickCard={this.clickCard}
