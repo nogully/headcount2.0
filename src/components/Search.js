@@ -9,17 +9,18 @@ class Search extends Component {
     };
   }
 
-  handleInput = e => {
-    e.preventDefault();
+  handleInput = event => {
+    event.preventDefault();
     this.setState({
-      display: e.target.value
+      display: event.target.value
     });
-    this.props.searchDistrict(e.target.value);
+    this.props.searchDistrict(event.target.value);
   };
 
-  handleButtonClick = e => {
-    e.preventDefault();
-    this.props.searchDistrict(this.state.display);
+  handleButtonClick = event => {
+    event.preventDefault();
+    this.setState({ display: '' });
+    this.props.searchDistrict('');
   };
 
   render() {
@@ -35,8 +36,8 @@ class Search extends Component {
             value={this.state.display}
             onChange={this.handleInput}
           />
-          <button className="search-button" onClick={this.handleButtonClick}>
-            Submit
+          <button className="clear-button" onClick={this.handleButtonClick}>
+            Clear
           </button>
         </form>
       </header>
