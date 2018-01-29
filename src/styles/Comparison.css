@@ -2,10 +2,15 @@
   background-color: #E85B5B;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
 .average {
   background-color: #E85B5B;
+}
+
+.Comparison h5 {
+  padding: 0px;
 }
